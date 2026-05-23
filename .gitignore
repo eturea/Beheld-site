@@ -137,6 +137,28 @@ dist
 !.yarn/sdks
 !.yarn/versions
 
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Build output (if you later add a build step)
+dist/
+.cache/
+
+# Cloudflare
+.wrangler/
+
+# Secrets (just in case)
+.env
+.env.local
+*.pem
+
 # Vite files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
