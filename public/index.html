@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Beheld — A journal you don't write</title>
 <meta name="description" content="A self-writing movement journal for iPhone. Every morning, a nameless companion writes about how you moved through the world the day before, in landmarks, not numbers.">
+<link rel="canonical" href="https://beheld.day/">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Beheld">
+<meta property="og:url" content="https://beheld.day/">
+<meta property="og:title" content="Beheld — A journal you don't write">
+<meta property="og:description" content="A self-writing movement journal for iPhone. Every morning, a nameless companion writes about how you moved through the world the day before — in landmarks, not numbers.">
+<meta property="og:image" content="https://beheld.day/assets/seal.png">
+<meta property="og:image:alt" content="The Beheld amber stone seal.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Beheld — A journal you don't write">
+<meta name="twitter:description" content="A self-writing movement journal for iPhone. Every morning, a nameless companion writes about how you moved through the world the day before — in landmarks, not numbers.">
+<meta name="twitter:image" content="https://beheld.day/assets/seal.png">
+
 <link rel="stylesheet" href="base.css">
 <style>
   .mf {}
@@ -89,7 +104,7 @@
   .mf-side .seal {
     width: 84px; height: 84px;
     border-radius: 999px;
-    background-image: url('assets/seal.png');
+    background-image: url('assets/seal-256.png');
     background-size: cover;
     box-shadow: 0 0 60px var(--amber-glow), 0 28px 50px -20px rgba(0,0,0,0.7);
   }
@@ -310,7 +325,7 @@
   }
   .mf-finale .seal {
     width: 96px; height: 96px; border-radius: 999px;
-    background-image: url('assets/seal.png'); background-size: cover;
+    background-image: url('assets/seal-256.png'); background-size: cover;
     margin: 0 auto 32px; box-shadow: 0 0 70px var(--amber-glow);
   }
   .mf-finale h2 {
@@ -329,7 +344,7 @@
 
   
   <!-- ─── Launching soon banner ─── -->
-  <div class="launch-banner" role="status" aria-live="polite">
+  <div class="launch-banner">
     <div class="lb-left">
       <span class="lb-dot" aria-hidden="true"></span>
       <span>Launching soon</span>
@@ -368,12 +383,12 @@
         <p class="tag">You didn't notice. Someone did.</p>
         <p class="lede">A self-writing movement journal for iPhone. Every morning, a nameless companion writes about how you moved through the world the day before — in landmarks, not numbers.</p>
         <div class="ctas">
-          <a href="#" class="cta-appstore">
+          <a href="mailto:support@beheld.day?subject=Beheld%20launch%20news" class="cta-appstore">
             <span class="glyph"><svg viewBox="0 0 24 24"><path d="M17.2 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.9-.8-3.1-.8-1.6 0-3.1.9-3.9 2.4-1.7 2.9-.4 7.1 1.2 9.4.8 1.1 1.7 2.4 2.9 2.4 1.2-.1 1.6-.8 3-.8s1.8.8 3.1.8c1.3 0 2.1-1.1 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.5-.9-2.5-3.7zM15 5.4c.6-.8 1-1.9.9-3-.9 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.9-1.3z"/></svg></span>
-            <span class="stack"><small>Download on the</small><span>App Store</span></span>
+            <span class="stack"><small>Coming soon to the</small><span>App Store</span></span>
           </a>
         </div>
-        <p class="fine">Free to use. $4.99 once for personal AI writing. Requires iPhone with iOS 26 or later. Personal AI writing and generated postcard images require an Apple Intelligence-capable iPhone.</p>
+        <p class="fine">Free to use. $4.99 once for personal AI writing. Requires iPhone with iOS 26 or later. Personal AI writing requires an Apple Intelligence-capable iPhone; generated postcard images require Image Playground.</p>
       </aside>
     </div>
   </section>
@@ -410,7 +425,7 @@
   <section class="mf-section" id="postcards">
     <div class="inner mf-postcards">
       <figure class="postcard">
-        <img src="assets/postcard-amber-sunset.jpg" alt="An illustrated postcard of amber hills.">
+        <img src="assets/postcard-amber-sunset.jpg" alt="An illustrated postcard of amber hills." loading="lazy" decoding="async">
         <figcaption class="caption">A quiet marker, passed in the margins.</figcaption>
       </figure>
       <div class="copy">
@@ -429,7 +444,7 @@
 
       <div class="mf-scroll" role="list">
         <figure class="mf-card" role="listitem">
-          <div class="postcard"><img src="assets/postcard-amber-sunset.jpg" alt="Amber hills at sunset."><span class="caption">A quiet marker, passed in the margins.</span></div>
+          <div class="postcard"><img src="assets/postcard-amber-sunset.jpg" alt="Amber hills at sunset." loading="lazy" decoding="async"><span class="caption">A quiet marker, passed in the margins.</span></div>
           <figcaption>
             <span class="when">Mar 04</span>
             <p class="quote" style="grid-column: 1 / -1; margin-top: 12px;">A year of accumulated movement, gathered in pieces. Evidence of ordinary days, not a commemoration.</p>
@@ -438,7 +453,7 @@
         </figure>
 
         <figure class="mf-card" role="listitem">
-          <div class="postcard"><img src="assets/postcard-green-road.jpg" alt="Winding road through green hills."><span class="caption">A quietly-placed marker on a mountain road.</span></div>
+          <div class="postcard"><img src="assets/postcard-green-road.jpg" alt="Winding road through green hills." loading="lazy" decoding="async"><span class="caption">A quietly-placed marker on a mountain road.</span></div>
           <figcaption>
             <span class="when">May 22</span>
             <p class="quote" style="grid-column: 1 / -1; margin-top: 12px;">Another day's distance passed this marker, like countless others.</p>
@@ -447,7 +462,7 @@
         </figure>
 
         <figure class="mf-card" role="listitem">
-          <div class="postcard"><img src="assets/distance-short.jpg" alt="A coastal village above a turquoise bay at sunset."><span class="caption">Past a marker on a tranquil path.</span></div>
+          <div class="postcard"><img src="assets/distance-short.jpg" alt="A coastal village above a turquoise bay at sunset." loading="lazy" decoding="async"><span class="caption">Past a marker on a tranquil path.</span></div>
           <figcaption>
             <span class="when">Tue 08:14</span>
             <p class="quote" style="grid-column: 1 / -1; margin-top: 12px;">A lifetime of movement past a quiet marker.</p>
@@ -456,7 +471,7 @@
         </figure>
 
         <figure class="mf-card" role="listitem">
-          <div class="postcard"><img src="assets/distance-medium.jpg" alt="A road winding into a valley at sunset."><span class="caption">Marker passed in the margins of the record.</span></div>
+          <div class="postcard"><img src="assets/distance-medium.jpg" alt="A road winding into a valley at sunset." loading="lazy" decoding="async"><span class="caption">Marker passed in the margins of the record.</span></div>
           <figcaption>
             <span class="when">Wed 07:02</span>
             <p class="quote" style="grid-column: 1 / -1; margin-top: 12px;">A year of modest distances covered, like scattered pieces of evidence.</p>
@@ -465,7 +480,7 @@
         </figure>
 
         <figure class="mf-card" role="listitem">
-          <div class="postcard"><img src="assets/push-short.jpg" alt="A boardwalk at golden hour beside still water."><span class="caption">Miles traveled quietly, in the margins of time.</span></div>
+          <div class="postcard"><img src="assets/push-short.jpg" alt="A boardwalk at golden hour beside still water." loading="lazy" decoding="async"><span class="caption">Miles traveled quietly, in the margins of time.</span></div>
           <figcaption>
             <span class="when">Sun 06:58</span>
             <p class="quote" style="grid-column: 1 / -1; margin-top: 12px;">Crater Lake, matched in pieces. Six kilometers, recorded without ceremony.</p>
@@ -490,7 +505,7 @@
       </div>
       <div class="plate-wrap">
         <div class="share-plate" aria-label="A postcard travels from Beheld into iMessage.">
-          <img class="sprite-strip" src="assets/share-sprite.jpg" alt="A milestone postcard arriving in an iMessage thread with its caption beneath.">
+          <img class="sprite-strip" src="assets/share-sprite.jpg" alt="A milestone postcard arriving in an iMessage thread with its caption beneath." loading="lazy" decoding="async">
           <div class="sv-overlay"><span class="play-pill">Tap to play</span></div>
         </div>
       </div>
@@ -520,10 +535,10 @@
   <section class="mf-finale">
     <div class="seal" aria-hidden="true"></div>
     <h2>A journal on your phone <em>that you do not write.</em></h2>
-    <p>You didn't notice. Someone did. Install Beheld and let tomorrow morning be the first entry.</p>
-    <a href="#" class="cta-appstore">
+    <p>You didn't notice. Someone did. Soon, Beheld will let tomorrow morning be the first entry.</p>
+    <a href="mailto:support@beheld.day?subject=Beheld%20launch%20news" class="cta-appstore">
       <span class="glyph"><svg viewBox="0 0 24 24"><path d="M17.2 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.9-.8-3.1-.8-1.6 0-3.1.9-3.9 2.4-1.7 2.9-.4 7.1 1.2 9.4.8 1.1 1.7 2.4 2.9 2.4 1.2-.1 1.6-.8 3-.8s1.8.8 3.1.8c1.3 0 2.1-1.1 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.5-.9-2.5-3.7zM15 5.4c.6-.8 1-1.9.9-3-.9 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.9-1.3z"/></svg></span>
-      <span class="stack"><small>Download on the</small><span>App Store</span></span>
+      <span class="stack"><small>Coming soon to the</small><span>App Store</span></span>
     </a>
     <p class="fine">Free to use. $4.99 once for personal AI writing.</p>
   </section>
@@ -531,7 +546,7 @@
   <footer class="site-foot">
     <div class="brand"><div class="icon-stone"></div><span>Beheld</span></div>
     <nav>
-      <a href="#">App Store</a>
+      <a href="mailto:support@beheld.day?subject=Beheld%20launch%20news">Coming soon</a>
       <a href="privacy.html">Privacy</a>
       <a href="support.html">Support</a>
       <a href="terms.html">Terms</a>

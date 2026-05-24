@@ -11,7 +11,7 @@
 
   --ivory: #EFE6D6;
   --ivory-dim: #8C8276;
-  --ivory-fade: #5A5347;
+  --ivory-fade: #756B5C; /* ~3.5:1 on --warm-black — meets WCAG AA for large text */
   --spark-white: #FFF8E8;
 
   --amber: #E8A317;
@@ -124,7 +124,7 @@ a:visited { color: inherit; }
 .brand-row .icon-stone {
   width: 36px; height: 36px;
   border-radius: 999px;
-  background-image: url('assets/seal.png');
+  background-image: url('assets/seal-256.png');
   background-size: cover;
   background-position: center;
   box-shadow: 0 0 24px rgba(232,163,23,0.25);
@@ -193,7 +193,7 @@ a:visited { color: inherit; }
 .site-nav .icon-stone {
   width: 30px; height: 30px;
   border-radius: 999px;
-  background-image: url('assets/seal.png');
+  background-image: url('assets/seal-256.png');
   background-size: cover;
   background-position: center;
   box-shadow: 0 0 18px rgba(232,163,23,0.22);
@@ -229,7 +229,7 @@ a:visited { color: inherit; }
   color: var(--ivory-dim);
 }
 .site-foot .brand { display: flex; align-items: center; gap: 12px; color: var(--ivory); font-family: var(--serif); font-size: 17px; }
-.site-foot .brand .icon-stone { width: 26px; height: 26px; border-radius: 999px; background-image: url('assets/seal.png'); background-size: cover; box-shadow: 0 0 14px rgba(232,163,23,0.18); }
+.site-foot .brand .icon-stone { width: 26px; height: 26px; border-radius: 999px; background-image: url('assets/seal-256.png'); background-size: cover; box-shadow: 0 0 14px rgba(232,163,23,0.18); }
 .site-foot nav { display: flex; gap: 22px; align-items: center; }
 .site-foot nav a { color: var(--ivory-dim); transition: color 180ms ease; }
 .site-foot nav a:hover { color: var(--ivory); }

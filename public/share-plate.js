@@ -9,8 +9,23 @@
     plates.forEach(function (plate) {
       if (isMobile) {
         plate.setAttribute('data-mobile-tap', '');
-        plate.addEventListener('click', function () {
+        // Tap-to-play is interactive only on mobile, so expose button semantics here.
+        plate.setAttribute('role', 'button');
+        plate.setAttribute('tabindex', '0');
+        plate.setAttribute('aria-pressed', 'false');
+        plate.setAttribute('aria-label', 'Play the postcard share animation');
+        var play = function () {
+          if (plate.classList.contains('is-playing')) return;
           plate.classList.add('is-playing');
+          plate.setAttribute('aria-pressed', 'true');
+          plate.setAttribute('aria-label', 'Postcard share animation playing');
+        };
+        plate.addEventListener('click', play);
+        plate.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+            e.preventDefault();
+            play();
+          }
         });
         return;
       }
