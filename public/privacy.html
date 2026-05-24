@@ -4,6 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy — Beheld</title>
+<meta name="description" content="Beheld's privacy policy. The app reads movement data from Apple Health on your iPhone to write your journal — no account, no servers, no analytics, no tracking.">
+<link rel="canonical" href="https://beheld.day/privacy">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Beheld">
+<meta property="og:url" content="https://beheld.day/privacy">
+<meta property="og:title" content="Privacy — Beheld">
+<meta property="og:description" content="Beheld's privacy policy. The app reads movement data from Apple Health on your iPhone to write your journal — no account, no servers, no analytics, no tracking.">
+<meta property="og:image" content="https://beheld.day/assets/seal.png">
+<meta property="og:image:alt" content="The Beheld amber stone seal.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacy — Beheld">
+<meta name="twitter:description" content="Beheld's privacy policy. The app reads movement data from Apple Health on your iPhone to write your journal — no account, no servers, no analytics, no tracking.">
+<meta name="twitter:image" content="https://beheld.day/assets/seal.png">
+
 <link rel="stylesheet" href="base.css">
 <style>
   .doc {
@@ -52,7 +68,7 @@
     <nav class="right">
       <a href="index.html" class="nav-link">Home</a>
       <a href="support.html" class="nav-link">Support</a>
-      <a href="mailto:support@beheld.day?subject=Beheld%20launch%20news" class="cta-appstore">
+      <a href="mailto:support@beheld.day?subject=Beheld%20launch%20news" class="cta-appstore" title="Email us for launch news" aria-label="Coming soon — email us for launch news">
         <span class="glyph"><svg viewBox="0 0 24 24"><path d="M17.2 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.9-.8-3.1-.8-1.6 0-3.1.9-3.9 2.4-1.7 2.9-.4 7.1 1.2 9.4.8 1.1 1.7 2.4 2.9 2.4 1.2-.1 1.6-.8 3-.8s1.8.8 3.1.8c1.3 0 2.1-1.1 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.5-.9-2.5-3.7zM15 5.4c.6-.8 1-1.9.9-3-.9 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.9-1.3z"/></svg></span>
         <span>Coming soon</span>
       </a>
@@ -61,12 +77,15 @@
 
   <main class="doc">
     <h1>Privacy</h1>
-    <div class="updated">Effective May 2026</div>
+    <div class="updated">Effective May 24, 2026</div>
 
     <p class="summary">Beheld is designed to work on your iPhone. Your movement history is used to write your journal and is not uploaded to Beheld servers. On supported devices, Apple Intelligence features run on device. Purchases are processed by Apple through the App Store.</p>
 
+    <p>This policy describes the Beheld iPhone app. It does not cover general browsing of the beheld.day website.</p>
+
     <h2>Health data</h2>
-    <p>Beheld reads HealthKit movement data with your permission. That data stays on your iPhone. Beheld does not upload your movement history to Beheld, to an ad network, or to any third-party server.</p>
+    <p>With your permission, Beheld reads a small set of movement data from Apple Health: step count, walking and running distance, and flights climbed — plus, for wheelchair users, push count and wheelchair distance. Beheld only reads this data; it never writes to Apple Health.</p>
+    <p>Beheld does not upload your movement history to Beheld, to an ad network, or to any third-party server. Whether your Apple Health data also syncs across your devices is governed by your Apple Health and iCloud settings, which you control — not by Beheld.</p>
 
     <h2>Writing</h2>
     <p>Where Apple Intelligence is available, your journal text is generated on your device using Apple's Foundation Models framework. When Personalization is enabled, your movement data is included in the prompt that runs locally — the prompt is not sent to Beheld.</p>
@@ -74,14 +93,18 @@
     <h2>Postcard images</h2>
     <p>Where Image Playground is available, milestone postcard images are generated on your device. Generated images are stored locally on your iPhone in your Beheld journal. When on-device generation is not available, Beheld uses bundled illustrations.</p>
 
+    <h2>Storage and backups</h2>
+    <p>Your journal — its entries and images — is stored on your iPhone. Beheld does not upload it. As with any app's data, your journal may be included in your encrypted device backups if you use iCloud Backup or back up to a computer. Those backups are handled by Apple and controlled by your settings, not by Beheld.</p>
+
     <h2>Purchases</h2>
-    <p>The one-time Personalization purchase is processed by Apple through StoreKit and the App Store. Beheld receives a receipt from Apple confirming the purchase; Beheld does not receive payment card details, billing address, or other payment information.</p>
+    <p>The one-time Personalization purchase is processed by Apple through StoreKit and the App Store. Beheld checks your purchase status on your device using StoreKit; it does not run its own server and sends no purchase information anywhere. Beheld never receives your payment card details, billing address, or other payment information.</p>
 
     <h2>No account</h2>
-    <p>Beheld does not require you to create an account or sign in. There is no Beheld profile, no email collection, and no sync server.</p>
+    <p>Beheld does not require you to create an account or sign in. The app has no Beheld profile, no sync server, and never asks for your email address. If you choose to email support, those messages and your email address are used only to reply — the app itself collects neither.</p>
 
     <h2>No analytics</h2>
-    <p>Beheld does not use any external analytics SDK, attribution SDK, or tracking pixel. Beheld does not measure feature usage on remote servers.</p>
+    <p>Beheld does not use any external analytics SDK, attribution SDK, or tracking pixel, and it does not measure feature usage on remote servers.</p>
+    <p>The only diagnostic information the developer may see is the aggregated, anonymized crash and performance data Apple itself provides through App Store Connect — and only if you have turned on sharing with app developers in your iOS settings. That data comes from Apple, is not linked to you, and is never collected by Beheld.</p>
 
     <h2>Contact</h2>
     <p>For questions about this policy, email <a href="mailto:support@beheld.day">support@beheld.day</a>.</p>
@@ -90,7 +113,7 @@
   <footer class="site-foot">
     <div class="brand"><div class="icon-stone"></div><span>Beheld</span></div>
     <nav>
-      <a href="mailto:support@beheld.day?subject=Beheld%20launch%20news">Coming soon</a>
+      <a href="mailto:support@beheld.day?subject=Beheld%20launch%20news" title="Email us for launch news" aria-label="Coming soon — email us for launch news">Coming soon</a>
       <a href="privacy.html">Privacy</a>
       <a href="support.html">Support</a>
       <a href="terms.html">Terms</a>
