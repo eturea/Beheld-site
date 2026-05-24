@@ -233,7 +233,7 @@ a:visited { color: inherit; }
 .site-foot nav { display: flex; gap: 22px; align-items: center; }
 .site-foot nav a { color: var(--ivory-dim); transition: color 180ms ease; }
 .site-foot nav a:hover { color: var(--ivory); }
-.site-foot .meta { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid var(--hairline); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 12px; color: var(--ivory-fade); }
+.site-foot .meta { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid var(--hairline); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 12px; color: var(--ivory-dim); } /* ivory-dim ~4.84:1 — AA for small text */
 
 @media (max-width: 560px) {
   .site-foot { grid-template-columns: 1fr; }

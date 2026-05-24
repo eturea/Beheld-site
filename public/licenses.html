@@ -4,6 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Licenses — Beheld</title>
+<meta name="description" content="Acknowledgements for the Apple platform technologies behind Beheld. No third-party analytics, attribution, or tracking SDKs are bundled.">
+<link rel="canonical" href="https://beheld.day/licenses">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Beheld">
+<meta property="og:url" content="https://beheld.day/licenses">
+<meta property="og:title" content="Licenses — Beheld">
+<meta property="og:description" content="Acknowledgements for the Apple platform technologies behind Beheld. No third-party analytics, attribution, or tracking SDKs are bundled.">
+<meta property="og:image" content="https://beheld.day/assets/seal.png">
+<meta property="og:image:alt" content="The Beheld amber stone seal.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Licenses — Beheld">
+<meta name="twitter:description" content="Acknowledgements for the Apple platform technologies behind Beheld. No third-party analytics, attribution, or tracking SDKs are bundled.">
+<meta name="twitter:image" content="https://beheld.day/assets/seal.png">
+
 <link rel="stylesheet" href="base.css">
 <style>
   .doc {
@@ -53,21 +69,19 @@
   .lic .tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber); }
   .lic .by { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ivory-dim); margin: 4px 0 12px; }
   .lic .note { font-family: var(--serif); font-size: 15px; line-height: 1.6; color: var(--ivory-dim); margin: 0; }
-
-  .lic-quote {
-    margin: 14px 0 0;
-    padding: 14px 16px;
-    border-left: 1px solid var(--hairline-strong);
-    background: rgba(255,255,255,0.02);
-    font-family: var(--mono);
-    font-size: 12px; line-height: 1.7;
-    color: var(--ivory-dim);
-    white-space: pre-wrap;
-    border-radius: 0 6px 6px 0;
-  }
 </style>
 </head>
 <body>
+
+  <!-- ─── Launching soon banner ─── -->
+  <div class="launch-banner">
+    <div class="lb-left">
+      <span class="lb-dot" aria-hidden="true"></span>
+      <span>Launching soon</span>
+    </div>
+    <div class="lb-mid">A self-writing movement journal &middot; iPhone &middot; iOS 26</div>
+    <div class="lb-right"><span class="lb-prefix">Stay in touch &mdash; </span><a href="mailto:support@beheld.day">support@beheld.day</a></div>
+  </div>
 
   <header class="site-nav">
     <a href="index.html" class="left" style="text-decoration:none; color: inherit; display: flex; align-items: center; gap: 14px;">
@@ -89,7 +103,7 @@
     <h1>Licenses</h1>
     <div class="updated">Acknowledgements · May 2026</div>
 
-    <p class="summary">Beheld runs on your iPhone using Apple's own frameworks. No third-party analytics, attribution, or tracking SDKs are bundled. The notices below acknowledge the platform technologies and the small set of open-source components Beheld ships with.</p>
+    <p class="summary">Beheld runs on your iPhone using Apple's own frameworks. It bundles no third-party open-source code, analytics, attribution, or tracking SDKs. The notices below acknowledge the Apple platform technologies Beheld is built on.</p>
 
     <h2>Platform technologies</h2>
     <p>Beheld is an iOS app built with Apple platform technologies and is provided to you under the Apple Media Services Terms. The following Apple frameworks are used under Apple's developer license terms:</p>
@@ -139,54 +153,11 @@
       <p class="note">Core platform frameworks used throughout Beheld for UI, language runtime, data flow, and standard library functionality.</p>
     </div>
 
-    <h2>Open-source components</h2>
-    <p>Beheld bundles the following open-source components. Their license notices are reproduced in full below as required.</p>
-
-    <div class="lic">
-      <div class="head">
-        <div class="name">Swift Collections</div>
-        <div class="tag">Apache-2.0</div>
-      </div>
-      <div class="by">Copyright © 2021 Apple Inc. and the Swift project authors</div>
-      <p class="note">Provides ordered, deque, and heap collection types used to manage the journal record on device.</p>
-      <pre class="lic-quote">Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    https://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.</pre>
-    </div>
-
-    <div class="lic">
-      <div class="head">
-        <div class="name">Swift Algorithms</div>
-        <div class="tag">Apache-2.0</div>
-      </div>
-      <div class="by">Copyright © 2020 Apple Inc. and the Swift project authors</div>
-      <p class="note">Sequence and collection algorithms used when summarizing movement into landmarks.</p>
-      <pre class="lic-quote">Licensed under the Apache License, Version 2.0. See the Apache-2.0 notice above.</pre>
-    </div>
-
-    <div class="lic">
-      <div class="head">
-        <div class="name">Swift Numerics</div>
-        <div class="tag">Apache-2.0</div>
-      </div>
-      <div class="by">Copyright © 2020 Apple Inc. and the Swift project authors</div>
-      <p class="note">Numerical helpers used in distance, elevation, and pace calculations.</p>
-      <pre class="lic-quote">Licensed under the Apache License, Version 2.0. See the Apache-2.0 notice above.</pre>
-    </div>
-
     <h2>Typography</h2>
     <p>The Beheld app uses the iOS system typefaces — <strong>SF Pro</strong> and <strong>New York</strong> — provided by Apple and used under the Apple system font license, embedded in iOS.</p>
 
     <h2>Imagery</h2>
-    <p>Postcard illustrations bundled for devices where Image Playground is unavailable were generated with Apple's Image Playground on the developer's device prior to shipping. They are licensed for use within Beheld and are not licensed for redistribution.</p>
+    <p>Postcard illustrations bundled for devices where Image Playground is unavailable were generated with Apple's Image Playground on the developer's device prior to shipping, and are included with the app for display within Beheld.</p>
 
     <h2>What Beheld does not include</h2>
     <p>Beheld does not bundle any third-party analytics SDK, attribution SDK, advertising SDK, crash-reporting service, push-notification service, or remote feature-flag service. There are no SDKs that contact external servers on your behalf.</p>
