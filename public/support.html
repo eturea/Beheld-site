@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Beheld</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  .doc {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: clamp(48px, 7vw, 96px) var(--gutter) clamp(72px, 9vw, 120px);
+  }
+  .doc h1 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(40px, 5.5vw, 64px);
+    line-height: 1.05; letter-spacing: -0.025em;
+    margin: 0 0 12px;
+  }
+  .doc .updated {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ivory-dim); margin-bottom: 40px;
+  }
+  .doc .summary {
+    font-family: var(--serif); font-style: italic;
+    font-size: 20px; line-height: 1.55; color: var(--amber);
+    border-left: 1px solid var(--amber-dark);
+    padding-left: 22px;
+    margin: 0 0 48px;
+  }
+  .doc h2 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: 26px; line-height: 1.2; letter-spacing: -0.01em;
+    margin: 40px 0 14px;
+  }
+  .doc p {
+    font-family: var(--serif); font-size: 17px; line-height: 1.65;
+    color: var(--ivory); margin: 0 0 14px;
+  }
+  .doc dl { display: grid; grid-template-columns: 200px 1fr; gap: 14px 28px; margin: 24px 0; }
+  .doc dt { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ivory-dim); padding-top: 4px; }
+  .doc dd { margin: 0; font-family: var(--serif); font-size: 17px; line-height: 1.5; color: var(--ivory); }
+  .doc a { color: var(--amber); border-bottom: 1px solid rgba(232,163,23,0.4); }
+  .doc .email-card {
+    margin: 32px 0;
+    padding: 24px 28px;
+    border: 1px solid var(--hairline-strong);
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(232,163,23,0.06), rgba(232,163,23,0));
+  }
+  .doc .email-card .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; }
+  .doc .email-card a { font-family: var(--serif); font-size: 22px; border: 0; }
+  @media (max-width: 560px) { .doc dl { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+  <header class="site-nav">
+    <a href="index.html" class="left" style="text-decoration:none; color: inherit; display: flex; align-items: center; gap: 14px;">
+      <div class="icon-stone" aria-hidden="true"></div>
+      <div class="name">Beheld</div>
+    </a>
+    <nav class="right">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="privacy.html" class="nav-link">Privacy</a>
+      <a href="#" class="cta-appstore">
+        <span class="glyph"><svg viewBox="0 0 24 24"><path d="M17.2 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.9-.8-3.1-.8-1.6 0-3.1.9-3.9 2.4-1.7 2.9-.4 7.1 1.2 9.4.8 1.1 1.7 2.4 2.9 2.4 1.2-.1 1.6-.8 3-.8s1.8.8 3.1.8c1.3 0 2.1-1.1 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.5-.9-2.5-3.7zM15 5.4c.6-.8 1-1.9.9-3-.9 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.9-1.3z"/></svg></span>
+        <span>Download</span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="doc">
+    <h1>Support</h1>
+    <div class="updated">Beheld for iPhone</div>
+
+    <p class="summary">For help with Beheld, email support@beheld.day. Include your iPhone model, iOS version, and a short description of what happened.</p>
+
+    <div class="email-card">
+      <div class="lbl">Get in touch</div>
+      <a href="mailto:support@beheld.day">support@beheld.day</a>
+    </div>
+
+    <h2>Device requirements</h2>
+    <dl>
+      <dt>Base app</dt>
+      <dd>iPhone with iOS 26 or later.</dd>
+      <dt>Personal AI writing</dt>
+      <dd>An Apple Intelligence-capable iPhone.</dd>
+      <dt>Postcard images</dt>
+      <dd>An Apple Intelligence-capable iPhone with Image Playground available. Beheld falls back to bundled illustrations elsewhere.</dd>
+    </dl>
+
+    <h2>Permissions</h2>
+    <p>Beheld asks for permission to read movement data from Apple Health. The data is read on your iPhone and never uploaded.</p>
+
+    <h2>Purchases</h2>
+    <p>The one-time $4.99 Personalization unlock is processed by Apple through the App Store. To restore the purchase on a new iPhone signed in to the same Apple ID, open Beheld, go to <strong>Settings → Restore Purchase</strong>.</p>
+
+    <h2>Frequently asked</h2>
+    <p><strong>Why doesn't Beheld say "walked" or "ran"?</strong><br>Because some movement isn't walking or running. The companion uses mode-neutral verbs — <em>covered</em>, <em>went</em>, <em>gained</em>, <em>returned</em> — so the journal works for any way you move through the world.</p>
+
+    <p><strong>What if I don't move very much one day?</strong><br>That's fine. Rest is part of the record, not its absence. The companion writes about quiet days too.</p>
+
+    <p><strong>Can I export my journal?</strong><br>Journal entries are stored on your iPhone alongside the rest of your data. They are included in your iPhone's standard iCloud backup if enabled.</p>
+  </main>
+
+  <footer class="site-foot">
+    <div class="brand"><div class="icon-stone"></div><span>Beheld</span></div>
+    <nav>
+      <a href="#">App Store</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+      <a href="terms.html">Terms</a>
+      <a href="licenses.html">Licenses</a>
+    </nav>
+    <div class="meta">
+      <span>© 2026 Beheld.</span>
+      <span><a href="mailto:support@beheld.day">support@beheld.day</a></span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,15 +1,558 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beheld — Coming Soon</title>
-  <meta name="description" content="An iOS app that turns your health milestones into something worth seeing.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beheld — A journal you don't write</title>
+<meta name="description" content="A self-writing movement journal for iPhone. Every morning, a nameless companion writes about how you moved through the world the day before, in landmarks, not numbers.">
+<link rel="stylesheet" href="base.css">
+<style>
+  .mf {}
+
+  /* ─── Hero — manifesto poster ─── */
+  .mf-hero {
+    min-height: 100vh;
+    padding: clamp(48px, 6vw, 96px) var(--gutter) clamp(72px, 8vw, 120px);
+    border-bottom: 1px solid var(--hairline);
+    position: relative;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .mf-hero::before {
+    content: '';
+    position: absolute;
+    top: -20%; right: -10%;
+    width: 60vw; max-width: 700px;
+    aspect-ratio: 1;
+    background: radial-gradient(closest-side, rgba(232,163,23,0.10), transparent 70%);
+    pointer-events: none;
+  }
+
+  .mf-mast {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    max-width: 1280px; width: 100%; margin: 0 auto;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ivory-dim);
+    flex-wrap: wrap; gap: 20px;
+  }
+  .mf-mast .left { display: flex; align-items: center; gap: 14px; color: var(--amber); }
+  .mf-mast .left .dot { width: 6px; height: 6px; border-radius: 999px; background: var(--amber); box-shadow: 0 0 12px var(--amber); }
+
+  .mf-poster {
+    flex: 1;
+    max-width: 1280px;
+    width: 100%;
+    margin: clamp(60px, 8vw, 120px) auto 0;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: start;
+  }
+
+  .mf-stack {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(40px, 7vw, 96px);
+    line-height: 1.03;
+    letter-spacing: -0.035em;
+    color: var(--ivory);
+    margin: 0;
+    text-wrap: balance;
+  }
+  .mf-stack .not {
+    color: var(--ivory-fade);
+    position: relative;
+    display: inline-block;
+    padding-right: 0.05em;
+  }
+  .mf-stack .not::after {
+    content: '';
+    position: absolute;
+    left: -0.05em; right: -0.05em;
+    top: 54%;
+    height: 2px;
+    background: var(--amber-dark);
+    transform-origin: left center;
+  }
+  .mf-stack .line { display: block; }
+  .mf-stack em { font-style: italic; color: var(--amber); font-weight: 400; }
+  .mf-stack .answer {
+    display: block;
+    margin-top: 0.35em;
+  }
+  .mf-stack .answer em { color: var(--amber); }
+
+  .mf-side {
+    padding-top: 12px;
+    display: flex; flex-direction: column; gap: 28px;
+    max-width: 380px;
+  }
+  .mf-side .seal {
+    width: 84px; height: 84px;
+    border-radius: 999px;
+    background-image: url('assets/seal.png');
+    background-size: cover;
+    box-shadow: 0 0 60px var(--amber-glow), 0 28px 50px -20px rgba(0,0,0,0.7);
+  }
+  .mf-side h1 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 0.95; letter-spacing: -0.035em;
+    margin: 0;
+  }
+  .mf-side .tag {
+    font-family: var(--serif); font-style: italic;
+    font-size: 19px; line-height: 1.4; color: var(--amber);
+    margin: 0;
+  }
+  .mf-side .lede {
+    font-family: var(--serif); font-size: 17px; line-height: 1.6;
+    color: var(--ivory); margin: 0;
+  }
+  .mf-side .ctas { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+  .mf-side .fine { max-width: 340px; }
+
+  @media (max-width: 880px) {
+    .mf-poster { grid-template-columns: 1fr; }
+    .mf-stack { font-size: clamp(36px, 11vw, 80px); }
+  }
+
+  /* ─── Section base ─── */
+  .mf-section {
+    padding: var(--section) var(--gutter);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .mf-section .inner { max-width: 1100px; margin: 0 auto; }
+  .mf-section .kicker {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--amber); margin-bottom: 18px;
+  }
+  .mf-section h2 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(34px, 4.8vw, 60px);
+    line-height: 1.1; letter-spacing: -0.02em;
+    margin: 0 0 24px; max-width: 22ch;
+    text-wrap: balance;
+  }
+  .mf-section h2 em { font-style: italic; color: var(--amber); }
+  .mf-section p.lede {
+    font-family: var(--serif); font-size: 19px; line-height: 1.6;
+    color: var(--ivory); max-width: 620px; margin: 0;
+  }
+
+  /* ─── Voice — paired ─── */
+  .mf-voice {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(20px, 3vw, 40px) clamp(40px, 6vw, 80px);
+  }
+  .mf-voice .item {
+    border-top: 1px solid var(--hairline-strong);
+    padding-top: 22px;
+  }
+  .mf-voice .label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--amber); margin-bottom: 14px;
+  }
+  .mf-voice p {
+    font-family: var(--serif); font-style: italic;
+    font-size: clamp(20px, 2vw, 24px); line-height: 1.4;
+    color: var(--ivory); margin: 0;
+    text-wrap: pretty;
+  }
+  @media (max-width: 720px) { .mf-voice { grid-template-columns: 1fr; } }
+
+  /* ─── Postcards — single hero ─── */
+  .mf-postcards {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+  }
+  .mf-postcards .postcard { aspect-ratio: 4/3; }
+  .mf-postcards .copy h3 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.15; letter-spacing: -0.02em;
+    margin: 0 0 18px;
+  }
+  .mf-postcards .copy h3 em { font-style: italic; color: var(--amber); }
+  .mf-postcards .copy p { font-size: 17px; line-height: 1.6; max-width: 460px; margin: 0 0 12px; }
+  @media (max-width: 820px) { .mf-postcards { grid-template-columns: 1fr; } }
+
+  /* ─── Postcards — horizontal gallery sweep ─── */
+  .mf-gallery {
+    margin-top: clamp(48px, 6vw, 80px);
+    padding-top: clamp(32px, 4vw, 48px);
+    border-top: 1px solid var(--hairline);
+  }
+  .mf-gallery .gallery-head {
+    max-width: 1100px;
+    margin: 0 auto clamp(28px, 3vw, 40px);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: clamp(20px, 4vw, 60px);
+    align-items: baseline;
+  }
+  .mf-gallery .gallery-head .kicker { margin-bottom: 0; }
+  .mf-gallery .gallery-head .meta {
+    color: var(--ivory); font-family: var(--serif); font-size: 17px; line-height: 1.6;
+    max-width: 540px; margin: 0;
+  }
+  @media (max-width: 760px) {
+    .mf-gallery .gallery-head { grid-template-columns: 1fr; gap: 10px; }
+  }
+  .mf-scroll {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(420px, 78vw);
+    gap: 28px;
+    padding: 8px 0 24px;
+    margin: 0 calc(var(--gutter) * -1);
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mf-scroll::-webkit-scrollbar { height: 8px; }
+  .mf-scroll::-webkit-scrollbar-thumb { background: var(--hairline-strong); border-radius: 4px; }
+  .mf-card { scroll-snap-align: start; display: block; }
+  .mf-card .postcard { aspect-ratio: 4/3; }
+  .mf-card figcaption {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+    align-items: baseline;
+    font-family: var(--sans);
+  }
+  .mf-card figcaption .when {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ivory-dim);
+  }
+  .mf-card figcaption .dist {
+    font-family: var(--serif); font-style: italic;
+    font-size: 18px;
+    color: var(--amber);
+    text-align: right;
+  }
+  .mf-card .quote {
+    margin: 10px 0 0;
+    font-family: var(--serif); font-size: 16px; line-height: 1.5;
+    color: var(--ivory); max-width: 380px;
+    text-wrap: pretty;
+  }
+
+  /* ─── Send ─ declarative + plate ─── */
+  .mf-send {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+  }
+  .mf-send-stack {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(40px, 6vw, 80px);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    color: var(--ivory);
+    margin: 0;
+    text-wrap: balance;
+  }
+  .mf-send-stack .line { display: block; color: var(--ivory-fade); }
+  .mf-send-stack .answer { display: block; color: var(--ivory); margin-top: 0.1em; }
+  .mf-send-stack .answer em { font-style: italic; color: var(--amber); }
+  .mf-send .kicker { color: var(--amber); margin-bottom: 26px; }
+  .mf-send-body {
+    font-family: var(--serif); font-size: 18px; line-height: 1.6;
+    color: var(--ivory); max-width: 460px; margin: 28px 0 0;
+  }
+  .mf-send-body em { font-style: italic; color: var(--amber); }
+  .mf-send-foot {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ivory-dim);
+    border-top: 1px solid var(--hairline);
+    padding-top: 16px; margin: 28px 0 0;
+    max-width: 460px;
+  }
+  .mf-send .plate-wrap {
+    display: flex; justify-content: center;
+  }
+  @media (max-width: 820px) {
+    .mf-send { grid-template-columns: 1fr; }
+    .mf-send .plate-wrap { order: -1; }
+  }
+
+  /* ─── Bottom strip (private + pricing) ─── */
+  .mf-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 5vw, 60px);
+  }
+  .mf-strip .col h3 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(28px, 3.5vw, 40px); line-height: 1.15;
+    margin: 0 0 16px; letter-spacing: -0.01em;
+  }
+  .mf-strip .col h3 em { font-style: italic; color: var(--amber); }
+  .mf-strip .col p { font-size: 16px; line-height: 1.6; margin: 0 0 12px; max-width: 460px; }
+  @media (max-width: 720px) { .mf-strip { grid-template-columns: 1fr; } }
+
+  /* ─── Finale — declarative ─── */
+  .mf-finale {
+    padding: clamp(100px, 14vw, 180px) var(--gutter);
+    text-align: center;
+    background: radial-gradient(ellipse 60% 80% at 50% 40%, rgba(232,163,23,0.10), transparent 60%);
+  }
+  .mf-finale .seal {
+    width: 96px; height: 96px; border-radius: 999px;
+    background-image: url('assets/seal.png'); background-size: cover;
+    margin: 0 auto 32px; box-shadow: 0 0 70px var(--amber-glow);
+  }
+  .mf-finale h2 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(40px, 6vw, 80px);
+    line-height: 1.05; margin: 0 auto 22px;
+    max-width: 14ch; text-wrap: balance;
+    letter-spacing: -0.025em;
+  }
+  .mf-finale h2 em { font-style: italic; color: var(--amber); }
+  .mf-finale p { max-width: 480px; margin: 0 auto 30px; color: var(--ivory); font-size: 18px; line-height: 1.55; }
+  .mf-finale .fine { max-width: 460px; margin: 14px auto 0; }
+</style>
 </head>
-<body>
-  <main>
-    <h1>Beheld</h1>
-    <p>Coming soon to the App Store.</p>
-  </main>
+<body class="mf">
+
+  
+  <!-- ─── Launching soon banner ─── -->
+  <div class="launch-banner" role="status" aria-live="polite">
+    <div class="lb-left">
+      <span class="lb-dot" aria-hidden="true"></span>
+      <span>Launching soon</span>
+    </div>
+    <div class="lb-mid">A self-writing movement journal &middot; iPhone &middot; iOS 26</div>
+    <div class="lb-right"><span class="lb-prefix">Stay in touch &mdash; </span><a href="mailto:support@beheld.day">support@beheld.day</a></div>
+  </div>
+
+<!-- Hero -->
+  <section class="mf-hero">
+    <div class="mf-mast">
+      <div class="left">
+        <span class="dot"></span>
+        <span>Issue 01 · A statement of intent</span>
+      </div>
+      <div class="right" style="display:flex; gap:22px; align-items:center;">
+        <a href="#voice" style="color: var(--ivory-dim); text-decoration: none;">The voice</a>
+        <a href="#postcards" style="color: var(--ivory-dim); text-decoration: none;">Postcards</a>
+        <a href="#send" style="color: var(--ivory-dim); text-decoration: none;">Sent</a>
+        <a href="#privacy" style="color: var(--ivory-dim); text-decoration: none;">Private</a>
+      </div>
+    </div>
+
+    <div class="mf-poster">
+      <p class="mf-stack">
+        <span class="line"><span class="not">Not a tracker.</span></span>
+        <span class="line"><span class="not">Not a coach.</span></span>
+        <span class="line"><span class="not">Not a streak.</span></span>
+        <span class="line"><span class="not">Not a score.</span></span>
+        <span class="answer">A journal you <em>don't write.</em><br><span style="font-size: 0.65em; color: var(--ivory-dim);">Someone else does.</span></span>
+      </p>
+
+      <aside class="mf-side">
+        <div class="seal" aria-hidden="true"></div>
+        <h1>Beheld</h1>
+        <p class="tag">You didn't notice. Someone did.</p>
+        <p class="lede">A self-writing movement journal for iPhone. Every morning, a nameless companion writes about how you moved through the world the day before — in landmarks, not numbers.</p>
+        <div class="ctas">
+          <a href="#" class="cta-appstore">
+            <span class="glyph"><svg viewBox="0 0 24 24"><path d="M17.2 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.9-.8-3.1-.8-1.6 0-3.1.9-3.9 2.4-1.7 2.9-.4 7.1 1.2 9.4.8 1.1 1.7 2.4 2.9 2.4 1.2-.1 1.6-.8 3-.8s1.8.8 3.1.8c1.3 0 2.1-1.1 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.5-.9-2.5-3.7zM15 5.4c.6-.8 1-1.9.9-3-.9 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.9-1.3z"/></svg></span>
+            <span class="stack"><small>Download on the</small><span>App Store</span></span>
+          </a>
+        </div>
+        <p class="fine">Free to use. $4.99 once for personal AI writing. Requires iPhone with iOS 26 or later. Personal AI writing and generated postcard images require an Apple Intelligence-capable iPhone.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Voice -->
+  <section class="mf-section" id="voice">
+    <div class="inner">
+      <div class="kicker">What the companion writes</div>
+      <h2>Statements. Not prompts, not questions, <em>not goals.</em></h2>
+      <p class="lede">It does not coach. It does not score. It does not say "walked" or "ran" or "climbed." It uses words like <em>covered</em>, <em>went</em>, <em>gained</em>, <em>returned</em>. Distance and landmarks lead.</p>
+
+      <div class="mf-voice">
+        <div class="item">
+          <div class="label">On an ordinary day</div>
+          <p>"The length of Central Park. Two kilometers, folded into yesterday."</p>
+        </div>
+        <div class="item">
+          <div class="label">On rest</div>
+          <p>"About a kilometer went into yesterday. Rest stayed part of the record."</p>
+        </div>
+        <div class="item">
+          <div class="label">On a gain</div>
+          <p>"Kilimanjaro's height, gained yesterday. The rise was there before anyone thought to count it."</p>
+        </div>
+        <div class="item">
+          <div class="label">On returning</div>
+          <p>"Crater Lake, matched in pieces. Six kilometers, recorded without ceremony."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Postcards -->
+  <section class="mf-section" id="postcards">
+    <div class="inner mf-postcards">
+      <figure class="postcard">
+        <img src="assets/postcard-amber-sunset.jpg" alt="An illustrated postcard of amber hills.">
+        <figcaption class="caption">A quiet marker, passed in the margins.</figcaption>
+      </figure>
+      <div class="copy">
+        <div class="kicker">Postcards</div>
+        <h3>Some days <em>arrive as keepsakes.</em></h3>
+        <p>When a milestone appears in the record, Beheld turns the distance into an illustrated postcard and leaves it in the journal. On eligible iPhones, paid Personalization users receive postcards generated on the device for the milestone at hand. Otherwise, Beheld quietly uses a bundled illustration.</p>
+        <p class="fine">Generated images stay on your device.</p>
+      </div>
+    </div>
+
+    <div class="mf-gallery">
+      <div class="gallery-head">
+        <div class="kicker">A few from the journal</div>
+        <p class="meta">Some days arrive as postcards. When a milestone appears, Beheld turns the distance into an illustrated keepsake, then leaves it in the journal. Scroll &rarr;</p>
+      </div>
+
+      <div class="mf-scroll" role="list">
+        <figure class="mf-card" role="listitem">
+          <div class="postcard"><img src="assets/postcard-amber-sunset.jpg" alt="Amber hills at sunset."><span class="caption">A quiet marker, passed in the margins.</span></div>
+          <figcaption>
+            <span class="when">Mar 04</span>
+            <p class="quote" style="grid-column: 1 / -1; margin-top: 12px;">A year of accumulated movement, gathered in pieces. Evidence of ordinary days, not a commemoration.</p>
+            <span class="dist">&mdash; 100 mi</span>
+          </figcaption>
+        </figure>
+
+        <figure class="mf-card" role="listitem">
+          <div class="postcard"><img src="assets/postcard-green-road.jpg" alt="Winding road through green hills."><span class="caption">A quietly-placed marker on a mountain road.</span></div>
+          <figcaption>
+            <span class="when">May 22</span>
+            <p class="quote" style="grid-column: 1 / -1; margin-top: 12px;">Another day's distance passed this marker, like countless others.</p>
+            <span class="dist">&mdash; 160 km</span>
+          </figcaption>
+        </figure>
+
+        <figure class="mf-card" role="listitem">
+          <div class="postcard"><img src="assets/distance-short.jpg" alt="A coastal village above a turquoise bay at sunset."><span class="caption">Past a marker on a tranquil path.</span></div>
+          <figcaption>
+            <span class="when">Tue 08:14</span>
+            <p class="quote" style="grid-column: 1 / -1; margin-top: 12px;">A lifetime of movement past a quiet marker.</p>
+            <span class="dist">&mdash; 3.8 km</span>
+          </figcaption>
+        </figure>
+
+        <figure class="mf-card" role="listitem">
+          <div class="postcard"><img src="assets/distance-medium.jpg" alt="A road winding into a valley at sunset."><span class="caption">Marker passed in the margins of the record.</span></div>
+          <figcaption>
+            <span class="when">Wed 07:02</span>
+            <p class="quote" style="grid-column: 1 / -1; margin-top: 12px;">A year of modest distances covered, like scattered pieces of evidence.</p>
+            <span class="dist">&mdash; 150 mi</span>
+          </figcaption>
+        </figure>
+
+        <figure class="mf-card" role="listitem">
+          <div class="postcard"><img src="assets/push-short.jpg" alt="A boardwalk at golden hour beside still water."><span class="caption">Miles traveled quietly, in the margins of time.</span></div>
+          <figcaption>
+            <span class="when">Sun 06:58</span>
+            <p class="quote" style="grid-column: 1 / -1; margin-top: 12px;">Crater Lake, matched in pieces. Six kilometers, recorded without ceremony.</p>
+            <span class="dist">&mdash; 6 km</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Send -->
+  <section class="mf-section" id="send">
+    <div class="inner mf-send">
+      <div>
+        <div class="kicker">Sent</div>
+        <p class="mf-send-stack">
+          <span class="line">Worth keeping.</span>
+          <span class="answer">Worth <em>sending.</em></span>
+        </p>
+        <p class="mf-send-body">A milestone postcard can leave the journal — as an iMessage, to one friend, with its caption beneath it. Tap the picture and the App Store opens to <em>Beheld.</em></p>
+        <p class="mf-send-foot">Once. To one person. Beheld doesn't see who.</p>
+      </div>
+      <div class="plate-wrap">
+        <div class="share-plate" aria-label="A postcard travels from Beheld into iMessage.">
+          <img class="sprite-strip" src="assets/share-sprite.jpg" alt="A milestone postcard arriving in an iMessage thread with its caption beneath.">
+          <div class="sv-overlay"><span class="play-pill">Tap to play</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Private / Pricing -->
+  <section class="mf-section" id="privacy">
+    <div class="inner mf-strip">
+      <div class="col">
+        <div class="kicker">Private by design</div>
+        <h3>Designed to work on your iPhone, and <em>nowhere else.</em></h3>
+        <p>Beheld reads Apple Health on the iPhone and writes there. Your movement history is not uploaded to Beheld, an ad network, or a server.</p>
+        <p>Writing runs on device, where Apple Intelligence is available. Postcard images are generated on device, where Image Playground is available.</p>
+        <p class="fine">There is no account. No external analytics. Purchases are handled by Apple through the App Store; Beheld does not receive payment details.</p>
+      </div>
+      <div class="col">
+        <div class="kicker">Free, then personal</div>
+        <h3>One free companion. One <em>small purchase.</em></h3>
+        <p>The free version keeps writing, every morning, forever. A one-time $4.99 purchase unlocks Personalization, and the companion begins to write about your own movement in more specific ways.</p>
+        <p class="fine">$4.99 once. No subscription. No upsells.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Finale -->
+  <section class="mf-finale">
+    <div class="seal" aria-hidden="true"></div>
+    <h2>A journal on your phone <em>that you do not write.</em></h2>
+    <p>You didn't notice. Someone did. Install Beheld and let tomorrow morning be the first entry.</p>
+    <a href="#" class="cta-appstore">
+      <span class="glyph"><svg viewBox="0 0 24 24"><path d="M17.2 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.9-.8-3.1-.8-1.6 0-3.1.9-3.9 2.4-1.7 2.9-.4 7.1 1.2 9.4.8 1.1 1.7 2.4 2.9 2.4 1.2-.1 1.6-.8 3-.8s1.8.8 3.1.8c1.3 0 2.1-1.1 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.5-.9-2.5-3.7zM15 5.4c.6-.8 1-1.9.9-3-.9 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.9-1.3z"/></svg></span>
+      <span class="stack"><small>Download on the</small><span>App Store</span></span>
+    </a>
+    <p class="fine">Free to use. $4.99 once for personal AI writing.</p>
+  </section>
+
+  <footer class="site-foot">
+    <div class="brand"><div class="icon-stone"></div><span>Beheld</span></div>
+    <nav>
+      <a href="#">App Store</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+      <a href="terms.html">Terms</a>
+      <a href="licenses.html">Licenses</a>
+    </nav>
+    <div class="meta">
+      <span>© 2026 Beheld.</span>
+      <span><a href="mailto:support@beheld.day">support@beheld.day</a></span>
+    </div>
+  </footer>
+
+<script>
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.mf-stack .line, .mf-stack .answer, .mf-side, .mf-voice .item, .mf-postcards > *, .mf-gallery .gallery-head > *, .mf-card, .mf-send > *, .mf-strip > *, .mf-finale > *').forEach((el, i) => {
+      el.classList.add('reveal'); el.style.transitionDelay = (Math.min(i, 6) * 80) + 'ms'; io.observe(el);
+    });
+  }
+</script>
+<script src="share-plate.js"></script>
 </body>
 </html>
