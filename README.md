@@ -1,6 +1,6 @@
 # Beheld Site
 
-Marketing and support website for [Beheld](https://apps.apple.com/app/idXXXXXXXX),
+Marketing and support website for [Beheld](https://apps.apple.com/app/id6760872350),
 an iOS 26+ milestone-tracking app.
 
 ## Stack
@@ -23,7 +23,7 @@ Open `public/index.html` in a browser, or:
   - `privacy.html`, `terms.html`, `support.html`, `licenses.html` — secondary pages
   - `base.css` — shared stylesheet and design tokens (edit brand values here)
   - `share-plate.js` — sprite animation for the home page Send section
-  - `robots.txt` — currently blocks all indexing (pre-launch)
+  - `robots.txt` — allows all indexing (live)
 - `public/assets/` — images and the share sprite
 
 ## Deploy

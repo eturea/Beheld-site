@@ -1,2 +1,5 @@
+# Beheld — live; allow all crawlers
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://beheld.day/sitemap.xml

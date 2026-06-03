@@ -99,6 +99,7 @@ a:visited { color: inherit; }
 .cta-appstore .glyph svg { width: 22px; height: 22px; fill: var(--warm-black); }
 .cta-appstore .stack { display: flex; flex-direction: column; line-height: 1.1; align-items: flex-start; }
 .cta-appstore .stack small { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #5A4A38; font-weight: 600; }
+.cta-appstore .stack > span { display: block; font-size: 20px; font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; color: var(--warm-black); }
 
 .cta-ghost {
   display: inline-flex; align-items: center; gap: 8px;
