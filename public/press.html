@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1A1410">
+<title>Press Kit — Beheld</title>
+<meta name="description" content="Press kit for Beheld, a self-writing movement journal for iPhone. Boilerplate, fact sheet, founder note, screenshots, and brand assets.">
+<link rel="canonical" href="https://beheld.day/press">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Beheld">
+<meta property="og:url" content="https://beheld.day/press">
+<meta property="og:title" content="Beheld — Press Kit">
+<meta property="og:description" content="A self-writing movement journal for iPhone. Press boilerplate, fact sheet, founder note, screenshots, and brand assets.">
+<meta property="og:image" content="https://beheld.day/assets/seal.png">
+<meta property="og:image:alt" content="The Beheld amber stone seal.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Beheld — Press Kit">
+<meta name="twitter:description" content="A self-writing movement journal for iPhone. Press boilerplate, fact sheet, founder note, screenshots, and brand assets.">
+<meta name="twitter:image" content="https://beheld.day/assets/seal.png">
+
+<link rel="stylesheet" href="base.css">
+<style>
+  /* ─── Section scaffold (mirrors index.html idiom) ─── */
+  .pk-section {
+    padding: var(--section) var(--gutter);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .pk-section .inner { max-width: 1100px; margin: 0 auto; }
+  .pk-kicker {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--amber); margin: 0 0 18px;
+  }
+  .pk-section h2 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(30px, 4.2vw, 50px);
+    line-height: 1.12; letter-spacing: -0.02em;
+    margin: 0 0 24px; max-width: 24ch; text-wrap: balance;
+  }
+  .pk-section h2 em { font-style: italic; color: var(--amber); }
+  .pk-lede {
+    font-family: var(--serif); font-size: 19px; line-height: 1.6;
+    color: var(--ivory); max-width: 640px; margin: 0;
+  }
+  .pk-section p { font-family: var(--serif); font-size: 17px; line-height: 1.65; color: var(--ivory); margin: 0 0 16px; }
+  .pk-section p:last-child { margin-bottom: 0; }
+  .pk-section em { font-style: italic; color: var(--amber); }
+  .pk-section b, .pk-section strong { color: var(--ivory); font-weight: 600; }
+
+  /* Inline text links inside prose */
+  .pk-facts a, .pk-caprow a, .pk-asset a, .pk-note a, .pk-contact-card a, .pk-lede a {
+    color: var(--amber);
+    border-bottom: 1px solid rgba(232,163,23,0.4);
+    transition: border-color 180ms ease;
+  }
+  .pk-facts a:hover, .pk-caprow a:hover, .pk-asset a:hover, .pk-note a:hover, .pk-contact-card a:hover, .pk-lede a:hover { border-color: var(--amber); }
+
+  /* ─── Hero ─── */
+  .pk-hero {
+    position: relative; overflow: hidden;
+    padding: clamp(56px, 8vw, 104px) var(--gutter) clamp(56px, 7vw, 88px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .pk-hero::before {
+    content: ''; position: absolute; top: -30%; right: -8%;
+    width: 52vw; max-width: 620px; aspect-ratio: 1;
+    background: radial-gradient(closest-side, rgba(232,163,23,0.10), transparent 70%);
+    pointer-events: none;
+  }
+  .pk-hero-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+  .pk-hero-top { display: flex; align-items: center; gap: 22px; }
+  .pk-hero-top img {
+    width: 84px; height: 84px; border-radius: 19px;
+    box-shadow: 0 10px 34px rgba(0,0,0,0.5);
+  }
+  .pk-hero h1 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(46px, 8vw, 88px);
+    line-height: 1; letter-spacing: -0.035em; margin: 0;
+  }
+  .pk-tag {
+    font-family: var(--serif); font-style: italic;
+    font-size: clamp(20px, 3vw, 26px); color: var(--amber);
+    margin: 22px 0 18px;
+  }
+  .pk-boiler { font-family: var(--serif); font-size: 20px; line-height: 1.6; color: var(--ivory); max-width: 640px; margin: 0; }
+  .pk-meta {
+    font-family: var(--sans); font-size: 14px; letter-spacing: 0.01em;
+    color: var(--ivory-dim); margin: 22px 0 26px;
+  }
+  .pk-meta b { color: var(--ivory); font-weight: 600; }
+  .pk-cta-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+
+  /* ─── Two-column copy ─── */
+  .pk-cols { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 48px); }
+  .pk-cols > div > p:last-child, .pk-cols > p:last-child { margin-bottom: 0; }
+  @media (max-width: 760px) { .pk-cols { grid-template-columns: 1fr; gap: 0; } }
+
+  /* ─── Voice ─── */
+  .pk-voice {
+    margin-top: 40px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: clamp(20px, 3vw, 40px) clamp(40px, 6vw, 80px);
+  }
+  .pk-voice .item { border-top: 1px solid var(--hairline-strong); padding-top: 22px; }
+  .pk-voice .label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--amber); margin-bottom: 14px;
+  }
+  .pk-voice p {
+    font-family: var(--serif); font-style: italic;
+    font-size: clamp(19px, 2vw, 23px); line-height: 1.4;
+    color: var(--ivory); margin: 0; text-wrap: pretty;
+  }
+  @media (max-width: 720px) { .pk-voice { grid-template-columns: 1fr; } }
+
+  /* ─── SENT ─── */
+  .pk-sent { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(36px, 6vw, 64px); align-items: center; }
+  .pk-pull { font-family: var(--serif); font-size: clamp(24px, 3vw, 30px); font-style: italic; color: var(--ivory); line-height: 1.25; margin: 0 0 16px; }
+  .pk-pull em { color: var(--amber); }
+  .pk-frame {
+    border-radius: 20px; overflow: hidden;
+    background: var(--warm-black-3);
+    border: 1px solid var(--hairline-strong);
+    box-shadow: 0 28px 60px -30px rgba(0,0,0,0.7), 0 1px 0 rgba(255,255,255,0.04) inset;
+  }
+  .pk-frame img { width: 100%; height: auto; display: block; }
+  @media (max-width: 760px) { .pk-sent { grid-template-columns: 1fr; } .pk-sent .pk-frame { max-width: 380px; } }
+
+  /* ─── Fact sheet ─── */
+  .pk-facts { border-top: 1px solid var(--hairline-strong); }
+  .pk-facts .row {
+    display: grid; grid-template-columns: 220px 1fr; gap: 18px;
+    padding: 15px 0; border-bottom: 1px solid var(--hairline);
+  }
+  .pk-facts dt { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ivory-dim); margin: 4px 0 0; }
+  .pk-facts dd { margin: 0; font-family: var(--serif); font-size: 17px; line-height: 1.5; color: var(--ivory); }
+  @media (max-width: 620px) { .pk-facts .row { grid-template-columns: 1fr; gap: 5px; } }
+
+  /* ─── From the developer ─── */
+  .pk-note { max-width: 760px; border-left: 1px solid var(--amber-dark); padding-left: 24px; }
+  .pk-note p { font-family: var(--serif); font-size: 20px; line-height: 1.6; color: var(--ivory); margin: 0 0 16px; }
+  .pk-note .sig { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ivory-dim); margin: 8px 0 0; }
+
+  /* ─── Screenshots ─── */
+  .pk-shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .pk-shots a {
+    display: block; border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--hairline); background: var(--warm-black-2);
+    transition: transform 240ms cubic-bezier(.2,.7,.2,1), border-color 240ms ease;
+  }
+  .pk-shots a:hover { transform: translateY(-4px); border-color: var(--hairline-strong); }
+  .pk-shots img { width: 100%; height: auto; display: block; }
+  .pk-caprow { font-family: var(--sans); font-size: 13px; color: var(--ivory-dim); margin: 16px 2px 0; letter-spacing: 0.01em; }
+  @media (max-width: 880px) { .pk-shots { grid-template-columns: repeat(2, 1fr); } }
+
+  /* ─── Brand assets ─── */
+  .pk-assets { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .pk-asset { display: flex; gap: 16px; align-items: center; background: var(--warm-black-2); border: 1px solid var(--hairline); border-radius: 14px; padding: 16px 18px; }
+  .pk-asset img { width: 54px; height: 54px; border-radius: 12px; flex: 0 0 auto; }
+  .pk-asset .t { font-family: var(--serif); font-size: 17px; color: var(--ivory); }
+  .pk-asset .d { font-family: var(--sans); font-size: 12.5px; color: var(--ivory-dim); letter-spacing: 0.01em; margin: 2px 0 4px; }
+  .pk-asset .links { font-family: var(--sans); font-size: 13px; color: var(--ivory-dim); }
+  @media (max-width: 680px) { .pk-assets { grid-template-columns: 1fr; } }
+
+  /* ─── Press contact card ─── */
+  .pk-contact-card {
+    margin: 28px 0 0; padding: 24px 28px;
+    border: 1px solid var(--hairline-strong); border-radius: 16px;
+    background: linear-gradient(180deg, rgba(232,163,23,0.06), rgba(232,163,23,0));
+    max-width: 640px;
+  }
+  .pk-contact-card .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; }
+  .pk-contact-card .email { font-family: var(--serif); font-size: 22px; color: var(--amber); border: 0; }
+
+  /* ─── Print (press kits get printed) ─── */
+  @media print {
+    .launch-banner, .site-nav, .cta-appstore, .cta-ghost, .pk-cta-row, .site-foot nav { display: none !important; }
+    html, body { background: #fff; color: #1a1410; }
+    .pk-section, .pk-hero { border-color: #ddd; }
+    .pk-section p, .pk-lede, .pk-boiler, .pk-note p, .pk-facts dd, .pk-voice p, .pk-pull { color: #1a1410; }
+    .pk-kicker, .pk-tag, .pk-section h2 em, .pk-pull em, .pk-section em { color: #8a5a0b; }
+    a { color: #8a5a0b; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ─── Now on the App Store banner ─── -->
+  <div class="launch-banner">
+    <div class="lb-left">
+      <span class="lb-dot" aria-hidden="true"></span>
+      <span>Now on the App Store</span>
+    </div>
+    <div class="lb-mid">A self-writing movement journal &middot; iPhone &middot; iOS 26</div>
+    <div class="lb-right"><a href="https://apps.apple.com/app/id6760872350">Download &rarr;</a></div>
+  </div>
+
+  <header class="site-nav">
+    <a href="index.html" class="left" style="text-decoration:none; color: inherit; display: flex; align-items: center; gap: 14px;">
+      <div class="icon-stone" aria-hidden="true"></div>
+      <div class="name">Beheld</div>
+    </a>
+    <nav class="right">
+      <a href="#facts" class="nav-link">Fact sheet</a>
+      <a href="#screens" class="nav-link">Screenshots</a>
+      <a href="#assets" class="nav-link">Assets</a>
+      <a href="https://apps.apple.com/app/id6760872350" class="cta-appstore">
+        <span class="glyph"><svg viewBox="0 0 24 24"><path d="M17.2 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.9-.8-3.1-.8-1.6 0-3.1.9-3.9 2.4-1.7 2.9-.4 7.1 1.2 9.4.8 1.1 1.7 2.4 2.9 2.4 1.2-.1 1.6-.8 3-.8s1.8.8 3.1.8c1.3 0 2.1-1.1 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.5-.9-2.5-3.7zM15 5.4c.6-.8 1-1.9.9-3-.9 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.9-1.3z"/></svg></span>
+        <span>App Store</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- ─── Hero ─── -->
+  <section class="pk-hero">
+    <div class="pk-hero-inner">
+      <p class="pk-kicker">Beheld · Press kit</p>
+      <div class="pk-hero-top">
+        <img src="assets/press/beheld-icon-512.png" alt="The Beheld app icon: a forget-me-not set in amber glass." width="84" height="84">
+        <h1>Beheld</h1>
+      </div>
+      <p class="pk-tag">You didn't notice. Someone did.</p>
+      <p class="pk-boiler">Beheld is a self-writing movement journal for iPhone. Every morning, a nameless companion reads the day before from Apple Health and writes it down — in prose, in landmarks, and in an illustrated postcard. It speaks in distance, not numbers, and it stays quiet.</p>
+      <p class="pk-meta"><b>Free</b> to use &nbsp;·&nbsp; <b>$4.99</b> once for personal writing &nbsp;·&nbsp; iPhone, <b>iOS&nbsp;26+</b> &nbsp;·&nbsp; Available now</p>
+      <div class="pk-cta-row">
+        <a href="https://apps.apple.com/app/id6760872350" class="cta-appstore">
+          <span class="glyph"><svg viewBox="0 0 24 24"><path d="M17.2 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.9-.8-3.1-.8-1.6 0-3.1.9-3.9 2.4-1.7 2.9-.4 7.1 1.2 9.4.8 1.1 1.7 2.4 2.9 2.4 1.2-.1 1.6-.8 3-.8s1.8.8 3.1.8c1.3 0 2.1-1.1 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.5-.9-2.5-3.7zM15 5.4c.6-.8 1-1.9.9-3-.9 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.9-1.3z"/></svg></span>
+          <span class="stack"><small>Download on the</small><span>App Store</span></span>
+        </a>
+        <a href="#assets" class="cta-ghost">Brand assets</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── About ─── -->
+  <section class="pk-section" id="about">
+    <div class="inner">
+      <p class="pk-kicker">About Beheld</p>
+      <div class="pk-cols">
+        <div>
+          <p>Beheld watches the movement data already on the iPhone and turns it into something worth reading. Each morning it writes a short journal entry about how the day before unfolded — <em>"The length of Central Park. Two kilometers, folded into yesterday."</em> It uses mode-neutral verbs — covered, went, gained, returned — so the journal reads the same however you move, on foot or on wheels. Distance and landmarks lead; steps, pushes, and elevation are supporting detail. The companion makes statements, never prompts, and it asks nothing of the reader.</p>
+          <p>When a milestone appears in the record, Beheld turns the distance into an illustrated postcard and leaves it in the journal. On Apple Intelligence iPhones, paid Personalization renders each postcard on the device for the milestone at hand; otherwise Beheld quietly uses a bundled illustration. The free version keeps writing every morning, with no subscription and no time limit — the one-time $4.99 purchase adds the personal writing, it does not gate the journal.</p>
+        </div>
+        <div>
+          <p>A postcard can also leave the journal through <b>SENT</b> — an iMessage to one friend, with its caption beneath it. Once. To one person. Beheld doesn't see who. It is the only way Beheld travels between people, built with the same restraint as the rest of the app.</p>
+          <p>Privacy is literal here, not a line on a marketing page. Beheld reads Apple Health on the iPhone and writes there; your movement history is not uploaded to Beheld, an ad network, or any server. Where Personalization is active, the personal writing and the generated postcard images are created on the device through Apple's Foundation Models and Image Playground; the free journal is written from a bundled, author-written library with bundled illustrations. No movement data leaves the phone in either tier. There is no account, no external analytics, and no third-party SDK — the App Privacy label reads <b>Data Not Collected</b>. Beheld is made by eTurea, an independent iOS developer in Alberta, Canada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Voice ─── -->
+  <section class="pk-section" id="voice">
+    <div class="inner">
+      <p class="pk-kicker">The companion's voice</p>
+      <h2>Statements. Not prompts, <em>not coaching.</em></h2>
+      <div class="pk-voice">
+        <div class="item">
+          <div class="label">On an ordinary day</div>
+          <p>"The length of Central Park. Two kilometers, folded into yesterday."</p>
+        </div>
+        <div class="item">
+          <div class="label">On rest</div>
+          <p>"About a kilometer went into yesterday. Rest stayed part of the record."</p>
+        </div>
+        <div class="item">
+          <div class="label">On a gain</div>
+          <p>"Kilimanjaro's height, gained yesterday. The rise was there before anyone thought to count it."</p>
+        </div>
+        <div class="item">
+          <div class="label">On returning</div>
+          <p>"Crater Lake, matched in pieces. Six kilometers, recorded without ceremony."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SENT ─── -->
+  <section class="pk-section" id="sent">
+    <div class="inner pk-sent">
+      <div>
+        <p class="pk-kicker">Sent</p>
+        <p class="pk-pull">Worth keeping. Worth <em>sending.</em></p>
+        <p>A milestone postcard can leave the journal — as an iMessage, to one friend, with its caption beneath it. Tap the picture and the App Store opens to Beheld.</p>
+        <p><b>Once. To one person. Beheld doesn't see who.</b> It is a quiet, built-in way for the journal to travel — restraint as a feature, not a growth tactic.</p>
+      </div>
+      <figure class="pk-frame" style="margin:0;">
+        <img src="assets/press/sent.png" alt="A milestone postcard arriving in an iMessage thread, its caption beneath it." width="1206" height="1578" loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <!-- ─── Private by design ─── -->
+  <section class="pk-section" id="privacy">
+    <div class="inner">
+      <p class="pk-kicker">Private by design</p>
+      <h2>Made to work on the iPhone, and <em>nowhere else.</em></h2>
+      <div class="pk-cols">
+        <p>Beheld reads Apple Health on the iPhone and writes there. Your movement history is not uploaded to Beheld, an ad network, or any server. When Personalization is available, the personal writing and postcard images are generated on the device through Apple's Foundation Models and Image Playground; the free journal uses bundled, author-written writing and bundled illustrations. No movement data leaves the phone in either tier.</p>
+        <p>There is no account, no external analytics, and no third-party SDK. The App Privacy label reads <b>Data Not Collected</b>. Purchases are handled by Apple through the App Store; Beheld does not receive payment details.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Fact sheet ─── -->
+  <section class="pk-section" id="facts">
+    <div class="inner">
+      <p class="pk-kicker">Fact sheet</p>
+      <dl class="pk-facts">
+        <div class="row"><dt>Name</dt><dd><b>Beheld</b></dd></div>
+        <div class="row"><dt>Developer</dt><dd>eTurea — an independent iOS developer in Alberta, Canada</dd></div>
+        <div class="row"><dt>What it is</dt><dd>A self-writing movement journal for iPhone</dd></div>
+        <div class="row"><dt>Category</dt><dd>Health &amp; Fitness (secondary: Lifestyle)</dd></div>
+        <div class="row"><dt>Platform</dt><dd>iPhone, <b>iOS 26 or later</b></dd></div>
+        <div class="row"><dt>Apple Intelligence</dt><dd>Personal writing needs an Apple Intelligence-capable iPhone; generated postcards need Image Playground. Everything else works on any iOS 26 iPhone.</dd></div>
+        <div class="row"><dt>Price</dt><dd><b>Free.</b> One in-app purchase: Personalization — <b>$4.99 USD, one time</b> (non-consumable). It adds on-device personal writing and postcards. No subscription, no ads.</dd></div>
+        <div class="row"><dt>Privacy</dt><dd><b>Data Not Collected.</b> Nothing leaves the device; no account, no analytics, no server.</dd></div>
+        <div class="row"><dt>Availability</dt><dd>United States, United Kingdom, Canada, Australia, New Zealand</dd></div>
+        <div class="row"><dt>Released</dt><dd>June 3, 2026</dd></div>
+        <div class="row"><dt>Languages</dt><dd>English</dd></div>
+        <div class="row"><dt>App Store</dt><dd><a href="https://apps.apple.com/app/id6760872350">apps.apple.com/app/id6760872350</a></dd></div>
+        <div class="row"><dt>Website</dt><dd><a href="https://beheld.day">beheld.day</a></dd></div>
+        <div class="row"><dt>Press contact</dt><dd><a href="mailto:support@beheld.day">support@beheld.day</a></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ─── From the developer ─── -->
+  <section class="pk-section" id="developer">
+    <div class="inner">
+      <p class="pk-kicker">From the developer</p>
+      <div class="pk-note">
+        <p>My iPhone has been quietly collecting movement data for years, and almost none of it ever turned into something I wanted to read. Every app I tried wanted to grade the day or tell me what to do tomorrow. Beheld is the journal I wanted: one that notices the day, writes it down, and stays quiet. The free companion is the whole product. The $4.99 makes the writing about you specifically — that is the only thing the purchase does.</p>
+        <p>The companion is the product; I am the writer behind the writer.</p>
+        <p class="sig">— eTurea, an independent iOS developer in Alberta, Canada</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Screenshots ─── -->
+  <section class="pk-section" id="screens">
+    <div class="inner">
+      <p class="pk-kicker">Screenshots</p>
+      <h2>The morning journal, postcards, <em>widgets.</em></h2>
+      <div class="pk-shots">
+        <a href="assets/press/screenshot-1-journal.jpg"><img src="assets/press/screenshot-1-journal.jpg" alt="The morning journal: a written entry with an illustrated postcard." width="1290" height="2796" loading="lazy" decoding="async"></a>
+        <a href="assets/press/screenshot-2-postcard.jpg"><img src="assets/press/screenshot-2-postcard.jpg" alt="A milestone postcard rendered on the device." width="1290" height="2796" loading="lazy" decoding="async"></a>
+        <a href="assets/press/screenshot-3-postcard.jpg"><img src="assets/press/screenshot-3-postcard.jpg" alt="A postcard from the bundled illustration set." width="1290" height="2796" loading="lazy" decoding="async"></a>
+        <a href="assets/press/screenshot-4-widget.jpg"><img src="assets/press/screenshot-4-widget.jpg" alt="Home Screen widgets showing the day's writing." width="1290" height="2796" loading="lazy" decoding="async"></a>
+      </div>
+      <p class="pk-caprow">Set of four, 1290 × 2796: <a href="assets/press/screenshot-1-journal.jpg">journal</a>, <a href="assets/press/screenshot-2-postcard.jpg">postcard</a>, <a href="assets/press/screenshot-3-postcard.jpg">stock postcard</a>, <a href="assets/press/screenshot-4-widget.jpg">widgets</a>.</p>
+    </div>
+  </section>
+
+  <!-- ─── Brand assets ─── -->
+  <section class="pk-section" id="assets">
+    <div class="inner">
+      <p class="pk-kicker">Brand assets</p>
+      <h2>Icon and screenshots, <em>ready to use.</em></h2>
+      <div class="pk-assets">
+        <div class="pk-asset">
+          <img src="assets/press/beheld-icon-512.png" alt="Beheld app icon, rounded." width="54" height="54">
+          <div>
+            <div class="t">App icon</div>
+            <div class="d">Forget-me-not in amber glass · 1024px PNG</div>
+            <div class="links"><a href="assets/press/beheld-icon.png">Rounded</a> &nbsp;·&nbsp; <a href="assets/press/beheld-icon-square.png">Square</a></div>
+          </div>
+        </div>
+        <div class="pk-asset">
+          <img src="assets/press/screenshot-1-journal.jpg" alt="Screenshot thumbnail." width="54" height="54">
+          <div>
+            <div class="t">Screenshots</div>
+            <div class="d">Four, 1290 × 2796 · JPG</div>
+            <div class="links"><a href="assets/press/screenshot-1-journal.jpg">1</a> · <a href="assets/press/screenshot-2-postcard.jpg">2</a> · <a href="assets/press/screenshot-3-postcard.jpg">3</a> · <a href="assets/press/screenshot-4-widget.jpg">4</a></div>
+          </div>
+        </div>
+        <div class="pk-asset">
+          <img src="assets/press/sent.png" alt="SENT postcard thumbnail." width="54" height="54">
+          <div>
+            <div class="t">SENT postcard</div>
+            <div class="d">The iMessage share, in context · PNG</div>
+            <div class="links"><a href="assets/press/sent.png">Download</a></div>
+          </div>
+        </div>
+        <div class="pk-asset">
+          <img src="assets/press/beheld-icon-square.png" alt="Square icon thumbnail." width="54" height="54">
+          <div>
+            <div class="t">Need a vector or other size</div>
+            <div class="d">An SVG / additional sizes can be provided on request</div>
+            <div class="links"><a href="mailto:support@beheld.day">Ask</a></div>
+          </div>
+        </div>
+      </div>
+      <p class="pk-caprow">Please keep the icon uncropped and unrecolored, and pair screenshots with the app name. The wordmark is simply <b>Beheld</b> in a serif face.</p>
+    </div>
+  </section>
+
+  <!-- ─── Press contact ─── -->
+  <section class="pk-section" id="contact">
+    <div class="inner">
+      <p class="pk-kicker">Press contact</p>
+      <p class="pk-lede">For review codes, written questions, or higher-resolution assets, write to <a href="mailto:support@beheld.day">support@beheld.day</a>. Beheld is a one-person project; you will hear back from the developer.</p>
+      <div class="pk-contact-card">
+        <div class="lbl">Get in touch</div>
+        <a class="email" href="mailto:support@beheld.day">support@beheld.day</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-foot">
+    <div class="brand"><div class="icon-stone"></div><span>Beheld</span></div>
+    <nav>
+      <a href="https://apps.apple.com/app/id6760872350">App Store</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+      <a href="press.html">Press</a>
+      <a href="terms.html">Terms</a>
+      <a href="licenses.html">Licenses</a>
+    </nav>
+    <div class="meta">
+      <span>© 2026 Beheld.</span>
+      <span><a href="mailto:support@beheld.day">support@beheld.day</a></span>
+    </div>
+  </footer>
+
+<script>
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.pk-hero-inner > *, .pk-section .pk-kicker, .pk-section h2, .pk-cols > *, .pk-voice .item, .pk-sent > *, .pk-facts .row, .pk-note, .pk-shots a, .pk-caprow, .pk-assets .pk-asset, .pk-contact-card, .pk-section .pk-lede').forEach((el, i) => {
+      el.classList.add('reveal'); el.style.transitionDelay = (Math.min(i, 6) * 80) + 'ms'; io.observe(el);
+    });
+  }
+</script>
+</body>
+</html>
