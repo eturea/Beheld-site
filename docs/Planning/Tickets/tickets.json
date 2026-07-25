@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08",
+  "generated_at": "2026-07-25",
   "app": "beheld-site",
   "project": "Beheld-site",
   "current_build": "",
@@ -19,10 +19,10 @@
     "app": "beheld-site",
     "total": 2,
     "by_status": {
-      "open": 2,
+      "open": 1,
       "in-progress": 0,
       "deferred": 0,
-      "done": 0,
+      "done": 1,
       "wontfix": 0
     },
     "by_severity": {
@@ -32,7 +32,7 @@
     },
     "open_by_severity": {
       "P1": 0,
-      "P2": 1,
+      "P2": 0,
       "P3": 1
     }
   },
@@ -44,7 +44,7 @@
       "severity": "P3",
       "opened": "2026-07-02",
       "app": "beheld-site",
-      "age_days": 6,
+      "age_days": 23,
       "effort": "evening",
       "risk": "low",
       "area": "site",
@@ -55,17 +55,18 @@
     {
       "id": "SITE_SYNC_CURRENT_VERSION",
       "title": "Sync Beheld-site to the current app version (v1.1.2)",
-      "status": "open",
+      "status": "done",
       "severity": "P2",
       "opened": "2026-07-02",
       "app": "beheld-site",
-      "age_days": 6,
+      "closed": "2026-07-25",
+      "age_days": 23,
       "effort": "evening",
       "risk": "low",
       "area": "site",
-      "file": "docs/Planning/Tickets/TICKET_SITE_SYNC_CURRENT_VERSION.md",
+      "file": "docs/Planning/Tickets/done/TICKET_SITE_SYNC_CURRENT_VERSION.md",
       "summary": "`~/my_works/Beheld-site` was last touched 2026-06-25 (commit `ca436d0` \"Replace iMessage share-plate with a static 'The journal' section; site polish\") — the same day v1.1.2 shipped — but a concrete audit turned up two things the \"site...",
-      "body": "# TICKET — Sync Beheld-site to the current app version (v1.1.2)\n\n**Priority:** P2 — marketing/legal accuracy, no app impact.\n**Area:** site — tracked here in the site repo (its natural home).\n**Live app:** v1.1.2 (`Beheld.xcodeproj/project.pbxproj` `MARKETING_VERSION = 1.1.2`; app repo `CHANGELOG.md` `[1.1.2] — 2026-06-25 build 190`).\n**Migrated:** 2026-07-08 from the Beheld app repo (`docs/Planning/Tickets/TICKET_SITE_SYNC_CURRENT_VERSION.md`, opened 2026-07-02) as part of the PLAN-TIME Phase 0 rule reversal — site tickets now live in the site repos. Original closed with a pointer (`TICKET_SITE_SYNC_CURRENT_VERSION_MIGRATED.md` in the app repo's `wontfix/`). Full original history preserved below.\n\n---\n\n## Problem\n\n`~/my_works/Beheld-site` was last touched 2026-06-25 (commit `ca436d0` \"Replace iMessage share-plate with a static 'The journal' section; site polish\") — the same day v1.1.2 shipped — but a concrete audit turned up two things the \"site polish\" pass did not cover, both tied to features that landed in v1.1.1–v1.1.2.\n\n## Audit findings (cited)\n\n1. **Legal pages predate the v1.1.1 Personalization / Image Playground feature.** `public/privacy.html:90` and `public/terms.html:102` both read **\"Effective May 24, 2026\"**. v1.1.1 (`CHANGELOG` `[1.1.1] — 2026-05-30`) shipped **on-device Image Playground postcard generation** for the paid Personalization tier (Chunks A–C). Verify the privacy policy adequately describes on-device AI image generation for personalized postcards; update the Effective date if the copy changes.\n2. **Press-kit screenshots may predate the v1.1.2 \"Topographic Atlas\" restyle.** v1.1.2 was a full timeline visual overhaul (paper background, hand-inked meander spine, new entry anatomy) and shipped **new App Store screenshots** (`CHANGELOG` [1.1.2] \"App Store screenshots use three distinct stock illustrations\"). The site's press-kit stills — `public/assets/press/screenshot-1-journal.jpg`, `screenshot-2-postcard.jpg`, `screenshot-3-postcard.jpg`, `screenshot-4-widget.jpg` — were **not** in the 2026-06-25 commit (only `app-timeline.jpg` and `share-card.jpg` were). Confirm they show the current v1.1.2 UI, not the pre-restyle look; re-export from the current App Store set if stale.\n3. **Confirm (likely OK, verify anyway):** the App Store link `https://apps.apple.com/app/id6760872350` still resolves; the landing/press feature copy (Personalization one-time IAP, on-device postcards, free journal with no time limit — `public/index.html:546`, `public/press.html:254`) matches the current App Store description.\n\n## Acceptance\n\n- [ ] privacy.html / terms.html reviewed against v1.1.1–v1.1.2 features; Effective date bumped if copy changed.\n- [ ] Press-kit + landing screenshots confirmed to show the v1.1.2 Atlas timeline UI (or re-exported).\n- [ ] App Store link + feature copy verified current.\n- [ ] Commit references this ticket ID.\n"
+      "body": "# TICKET — Sync Beheld-site to the current app version (v1.1.2)\n\n**Priority:** P2 — marketing/legal accuracy, no app impact.\n**Area:** site — tracked here in the site repo (its natural home).\n**Live app:** v1.1.2 (`Beheld.xcodeproj/project.pbxproj` `MARKETING_VERSION = 1.1.2`; app repo `CHANGELOG.md` `[1.1.2] — 2026-06-25 build 190`).\n**Migrated:** 2026-07-08 from the Beheld app repo (`docs/Planning/Tickets/TICKET_SITE_SYNC_CURRENT_VERSION.md`, opened 2026-07-02) as part of the PLAN-TIME Phase 0 rule reversal — site tickets now live in the site repos. Original closed with a pointer (`TICKET_SITE_SYNC_CURRENT_VERSION_MIGRATED.md` in the app repo's `wontfix/`). Full original history preserved below.\n\n---\n\n## Problem\n\n`~/my_works/Beheld-site` was last touched 2026-06-25 (commit `ca436d0` \"Replace iMessage share-plate with a static 'The journal' section; site polish\") — the same day v1.1.2 shipped — but a concrete audit turned up two things the \"site polish\" pass did not cover, both tied to features that landed in v1.1.1–v1.1.2.\n\n## Audit findings (cited)\n\n1. **Legal pages predate the v1.1.1 Personalization / Image Playground feature.** `public/privacy.html:90` and `public/terms.html:102` both read **\"Effective May 24, 2026\"**. v1.1.1 (`CHANGELOG` `[1.1.1] — 2026-05-30`) shipped **on-device Image Playground postcard generation** for the paid Personalization tier (Chunks A–C). Verify the privacy policy adequately describes on-device AI image generation for personalized postcards; update the Effective date if the copy changes.\n2. **Press-kit screenshots may predate the v1.1.2 \"Topographic Atlas\" restyle.** v1.1.2 was a full timeline visual overhaul (paper background, hand-inked meander spine, new entry anatomy) and shipped **new App Store screenshots** (`CHANGELOG` [1.1.2] \"App Store screenshots use three distinct stock illustrations\"). The site's press-kit stills — `public/assets/press/screenshot-1-journal.jpg`, `screenshot-2-postcard.jpg`, `screenshot-3-postcard.jpg`, `screenshot-4-widget.jpg` — were **not** in the 2026-06-25 commit (only `app-timeline.jpg` and `share-card.jpg` were). Confirm they show the current v1.1.2 UI, not the pre-restyle look; re-export from the current App Store set if stale.\n3. **Confirm (likely OK, verify anyway):** the App Store link `https://apps.apple.com/app/id6760872350` still resolves; the landing/press feature copy (Personalization one-time IAP, on-device postcards, free journal with no time limit — `public/index.html:546`, `public/press.html:254`) matches the current App Store description.\n\n## Acceptance\n\n- [x] privacy.html / terms.html reviewed against v1.1.1–v1.1.2 features; Effective date bumped if copy changed.\n- [x] Press-kit + landing screenshots confirmed to show the v1.1.2 Atlas timeline UI (or re-exported).\n- [x] App Store link + feature copy verified current.\n- [x] Commit references this ticket ID.\n\n---\n\n## Resolution\n\nClosed **2026-07-25** on audit, not on edits. The site needed **no content\nchanges**: all three findings were verified against the live v1.1.4 App Store\nlisting and the repository history, and each turned out to be either already\ncorrect or a false alarm. Verified one release later than the ticket was\nwritten — the app shipped **v1.1.4** publicly on 2026-07-25 (`MARKETING_VERSION\n= 1.1.4`, build 201, App Store \"Version 1.1.4\" live at audit time), so this\ncloses the sync gap for v1.1.1 through v1.1.4 in one pass.\n\n### Finding 1 — legal pages: **false alarm, no change**\n\nThe suspicion was that `privacy.html` / `terms.html` (\"Effective May 24, 2026\")\npredated the v1.1.1 Image Playground feature. They do not. `git log -S \"Image\nPlayground\" -- public/privacy.html` returns exactly one commit, `25d3561`\n(2026-05-24, \"Ship manifesto landing page + legal/support pages\") — the\non-device image-generation copy at `public/privacy.html:104` landed in the\n**same commit that set the Effective date**. The policy already describes\nApple Intelligence generation (`:101`), Image Playground postcard generation and\nlocal storage (`:104`), the bundled-illustration fallback (`:104`), and\ndelete-by-uninstall (`:121`). Nothing about v1.1.1–v1.1.4 changed the data\nflows those paragraphs describe, so the Effective date correctly stays at\n**May 24, 2026**.\n\n### Finding 2 — press screenshots: **false alarm, no change**\n\nThe suspicion was that `public/assets/press/screenshot-*.jpg` (added 2026-06-03\nin `d06bbf7`, three weeks before v1.1.2 shipped 2026-06-25) showed the\npre-restyle UI. Visual comparison of `public/assets/press/screenshot-1-journal.jpg`\nagainst the known-current `public/assets/app-timeline.jpg` (re-exported\n2026-06-25 in `ca436d0`) shows the **same Topographic Atlas treatment** — paper\nbackground, hand-inked meander spine with milestone nodes, current entry\nanatomy, identical seeded copy. The press stills were exported from the\nrestyled build; the commit date predates the *release*, not the *restyle*. No\nre-export needed.\n\n### Finding 3 — App Store link + feature copy: **verified current**\n\n`https://apps.apple.com/app/id6760872350` resolves (the id appears four times\nacross `public/*.html`, twice with `ppid` attribution params). Live listing\nchecked field by field against the site:\n\n| Live App Store (v1.1.4) | Site | Verdict |\n|---|---|---|\n| Subtitle \"A journal you don't write.\" | `og:image:alt` site-wide | match |\n| iOS 26.0 or later | `index.html:406`, `press.html:326`, `support.html:125` | match |\n| Free, no subscription | `index.html:546`, `press.html:254` | match |\n| Personalization, one-time non-consumable, **US$4.99** | `press.html:328` \"US$4.99 … CAD $6.99 in Canada\" | match |\n| On-device processing, nothing uploaded | `press.html:258`, `:311`, `privacy.html:92` | match |\n| Data Not Collected privacy label | `press.html:258` | match |\n\nv1.1.4 itself (\"Companion Truth\" — `docs/Planning/SPEC_V1_1_4_COMPANION_TRUTH.md`)\nis an accuracy pass over generated companion text plus a notification-opt-out\nfix. It ships **no new feature, data flow, permission, price, or platform\nrequirement**, so no marketing or legal surface on the site is stale because of\nit.\n\n### Housekeeping done alongside\n\nDeleted the untracked `04_press_kit/` directory from the repo root — a\nsuperseded standalone copy of the press page. Its three icon PNGs and `sent.png`\nwere byte-identical to `public/assets/press/`, but its four screenshots were the\n**old pre-Atlas dark-mode UI** (dark chat bubbles, \"A journal you do not write.\"\nmarketing frame), i.e. strictly older than the shipped set. The live press page\nis `public/press.html`; the directory was never served. Related but separate:\n`TICKET_ARCHIVE_BEHELD_WEB_PAGE` still covers `~/my_works/Beheld-web-page`.\n\n### Not in scope, filed elsewhere\n\nThe **app repo's** `CHANGELOG.md` has no `[1.1.4]` entry — it jumps from\n`[Unreleased]` to `[1.1.3]` despite v1.1.4 shipping publicly. That is an app-repo\ngap, not a site one.\n"
     }
   ]
 }
