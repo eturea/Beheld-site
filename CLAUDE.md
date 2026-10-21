@@ -3,7 +3,7 @@
 ## Project
 
 Marketing and support website for **Beheld** (iOS milestone-tracking journal app,
-`~/my_works/Beheld`). Static site, served from `public/` via GitHub Pages —
+`~/projects/beheld/app`). Static site, served from `public/` via GitHub Pages —
 no build step, no framework, no Xcode tooling. The app repo's `CLAUDE.md`
 carries the app-side context; this repo is site content only.
 
@@ -23,7 +23,7 @@ carry a pointer).
 ```
 
 The regen script also refreshes the **combined two-app dashboard** at
-`~/my_works/tickets-dashboard/index.html` (via `tickets-dashboard/merge-tickets.py`),
+`~/projects/tools/tickets-dashboard/index.html` (via `tickets-dashboard/merge-tickets.py`),
 which maps this repo's tickets onto the parent app (`beheld`) with `area: site`
 default — so tickets here may omit `area:`. **Never edit `tickets.json` by
 hand** — edit the source `TICKET_*.md` and re-run.
